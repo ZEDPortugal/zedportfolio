@@ -4,7 +4,8 @@ import Skills from './Skills';
 import About from './About';
 import Projects from './Projects';
 import Home from './Home';
-import ChatBot from "../../components/chatbot";
+import ChatBot from './ChatBot';
+
 const App = () => {
   const [isLight, setIsLight] = useState(false);
 
