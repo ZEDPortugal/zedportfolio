@@ -1,6 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
+import About from "../../components/About";
+import ChatBot from "../../components/chatbot";
+import Home from "../../components/Home";
+import Navbar from "../../components/Navbar";
+import Skills from "../../components/Skills";
 
 const Projects = ({ isLight }) => {
   const { ref, inView } = useInView({
