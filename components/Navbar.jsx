@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="text-[#40e1cf] hover:text-white ease-in-out duration-1000 font-mono font-bold text-4xl">Z|E|D</div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex font-mono">
+        <div className="hidden xl:flex font-mono">
           <ul className="flex text-white">
             <li
               onClick={() => scrollToSection('#home')}
@@ -58,13 +58,13 @@ const Navbar = () => {
         <a
           href="/Joe-Marten-Zedric-Portugal_Resume.pdf"
           download="Joe-Marten-Zedric-Portugal_Resume.pdf"
-          className="hidden lg:flex text-white font-mono uppercase hover:bg-black border-2 hover:text-[#38BDAE] hover:border-[#38BDAE] hover:rounded-2xl border-white ease-in-out duration-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          className="hidden xl:flex text-white font-mono uppercase hover:bg-black border-2 hover:text-[#38BDAE] hover:border-[#38BDAE] hover:rounded-2xl border-white ease-in-out duration-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >
           Download Resume
         </a>
 
         {/* Mobile Menu Icon */}
-        <div onClick={handleNav} className="md:hidden cursor-pointer text-white" aria-label="Toggle menu">
+        <div onClick={handleNav} className="xl:hidden cursor-pointer text-white" aria-label="Toggle menu">
           <AiOutlineMenu size={25} />
         </div>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
         <div
           className={
             menuOpen
-              ? 'fixed left-0 top-0 w-[70%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
+              ? 'fixed left-0 top-0 w-[70%] xl:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
               : 'fixed left-[-100%] top-0 p-10 h-screen ease-out duration-500'
           }
         >
