@@ -71,7 +71,7 @@ const Navbar = ({ isLight, handleToggle }) => {
 
       {/* Mobile Navigation */}
       <div
-        className={`xl:hidden fixed left-0 top-0 w-[60%] h-screen bg-black p-10 ease-in-out duration-500 ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`xl:hidden fixed left-0 top-0 w-[70%] h-screen bg-[#0d0d0d] opacity-90 p-10 ease-in-out duration-500 ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex w-full items-center justify-end text-white">
           <div onClick={handleNav} className="cursor-pointer" aria-label="Close menu">
