@@ -1,97 +1,111 @@
-import React from "react";
-import { useInView } from "react-intersection-observer";
-import { FaSun, FaMoon, FaHtml5, FaCss3, FaJs, FaReact } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import ChatBot from './ChatBot.js';
+import React, { useState, useCallback } from 'react';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
+const Navbar = ({ isLight, handleToggle }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-const Skills = ({ isLight, handleToggle }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false, // Ensure the animation only triggers once
-    threshold: 0.1, // Activate when 10% of the section is visible
-  });
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Smooth and slow scroll to section with debounce
+  const scrollToSection = useCallback((id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      const top = section.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: top - (window.innerHeight / 2 - section.offsetHeight / 2), // Center the section vertically
+        behavior: 'smooth',
+      });
+      setMenuOpen(false); // Close the mobile menu after navigation
+    }
+  }, []);
 
   return (
-    <section
-      ref={ref}
-      id="skills"
-      className={`relative font-mono ${
-        isLight ? "bg-[#d9d9d9]" : "bg-[#0d0d0d]"
-      } transition-colors duration-500`}
-    >
-      <div
-        className={`absolute top-0 left-0 w-full h-full ${
-          isLight ? "bg-[#f9f9f9]" : "bg-[#131313]"
-        } z-[-1] filter brightness-[50%] transition-colors duration-500`}
-      ></div>
+    <nav className={`animate-fade-down animate-once animate-duration-[200ms] flex w-full h-16 shadow-xl fixed top-0 left-0 z-10 ${isLight ? 'bg-gray-100' : 'bg-black'} transition-colors duration-500`}>
+      <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
+        <div className={`text-4xl font-mono font-bold ${isLight ? 'text-black' : 'text-[#40e1cf]'} hover:text-white ease-in-out duration-1000`}>Z|E|D</div>
 
-      <div className="relative flex flex-col justify-center items-center mx-auto max-w-7xl p-4 sm:p-8 md:p-12">
-        {/* Dark/Light Mode Toggle Button with Icons */}
-        <div className="day-night absolute top-5 right-5 sm:top-8 sm:right-10">
-          <button
-            onClick={handleToggle}
-            className={`p-2 rounded-full font-semibold shadow-md hover:bg-slate-600 duration-500 ${
-              isLight ? "bg-[#fdd835] text-white" : "bg-[#060606] text-white"
-            }`}
-          >
-            {isLight ? (
-              <FaSun className="text-2xl" />
-            ) : (
-              <FaMoon className="text-2xl" />
-            )}
-          </button>
-        </div>
-
-        {/* Title */}
-        <h1
-          className={`text-4xl sm:text-5xl font-semibold uppercase text-center mb-8 ${
-            isLight ? "text-[#333333]" : "text-[#ffffff]"
-          } transition-colors duration-500`}
-        >
-          Skills
-        </h1>
-
-        {/* Skill Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-6 md:gap-10">
-          {[
-            { name: "HTML5", icon: <FaHtml5 className="w-10 h-10 mx-auto" /> },
-            { name: "CSS3", icon: <FaCss3 className="w-10 h-10 mx-auto" /> },
-            { name: "JavaScript", icon: <FaJs className="w-10 h-10 mx-auto" /> },
-            { name: "React", icon: <FaReact className="w-10 h-10 mx-auto" /> },
-            { name: "Next.js", icon: <RiNextjsFill className="w-10 h-10 mx-auto" /> },
-            {
-              name: "Tailwind CSS",
-              icon: <RiTailwindCssFill className="w-10 h-10 mx-auto" />,
-            },
-          ].map((skill, index) => (
-            <div
-              key={index}
-              className={`w-34 hover:border-[#38BDAE] border-2 rounded-3xl p-6 transform transition-all duration-500 ${
-                isLight ? "bg-white border-[#333333] text-[#333333]" : "bg-[#1a1a1a] border-[#ffffff] text-white"
-              } shadow-md text-center opacity-0 scale-95 transition-colors duration-500 ${
-                inView ? "animate-fade opacity-100 scale-100" : ""
-              }`}
+        {/* Desktop Navigation */}
+        <div className="hidden xl:flex font-mono">
+          <ul className={`flex ${isLight ? 'text-black' : 'text-white'}`}>
+            <li
+              onClick={() => scrollToSection('#home')}
+              className="ml-10 uppercase hover:text-[#38BDAE] ease-in-out duration-200 text-xl cursor-pointer"
             >
-              <div
-                className={`${
-                  isLight ? "filter brightness-0" : "filter brightness-100"
-                } transition-all duration-500`}
-              >
-                {skill.icon}
-              </div>
-              <p
-                className={`text-center text-xl font-semibold mt-4 ${
-                  isLight ? "text-[#333333]" : "text-[#ffffff]"
-                } transition-colors duration-500`}
-              >
-                {skill.name}
-              </p>
-            </div>
-          ))}
+              Home
+            </li>
+            <li
+              onClick={() => scrollToSection('#skills')}
+              className="ml-10 uppercase hover:text-[#38BDAE] ease-in-out duration-200 text-xl cursor-pointer"
+            >
+              Skills
+            </li>
+            <li
+              onClick={() => scrollToSection('#about')}
+              className="ml-10 uppercase hover:text-[#38BDAE] ease-in-out duration-200 text-xl cursor-pointer"
+            >
+              About
+            </li>
+            <li
+              onClick={() => scrollToSection('#projects')}
+              className="ml-10 uppercase hover:text-[#38BDAE] ease-in-out duration-200 text-xl cursor-pointer"
+            >
+              Projects
+            </li>
+          </ul>
+        </div>
+        <a 
+          href="/Joe-Marten-Zedric-Portugal_Resume.pdf" 
+          download="Joe-Marten-Zedric-Portugal_Resume.pdf"
+          className="hidden xl:flex text-white font-mono uppercase hover:bg-black border-2 hover:text-[#38BDAE] hover:border-[#38BDAE] hover:rounded-2xl border-white ease-in-out duration-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        >
+          Resume
+        </a>
+        
+        {/* Mobile Menu Icon */}
+        <div onClick={handleNav} className="xl:hidden cursor-pointer text-white" aria-label="Toggle menu">
+          {menuOpen ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
         </div>
       </div>
-    </section>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`xl:hidden fixed left-0 top-0 w-[70%] h-screen bg-[#0d0d0d] opacity-90 p-10 ease-in-out duration-500 ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className="flex w-full items-center justify-end text-white">
+          <div onClick={handleNav} className="cursor-pointer" aria-label="Close menu">
+            <AiOutlineClose size={25} />
+          </div>
+        </div>
+        <div className="py-4 flex flex-col text-white font-mono">
+          <ul>
+            <li onClick={() => setMenuOpen(false)} className="py-4 text-xl uppercase hover:text-[#38BDAE] ease-in-out duration-200 cursor-pointer">
+              <a href="#home">Home</a>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="py-4 text-xl uppercase hover:text-[#38BDAE] ease-in-out duration-200 cursor-pointer">
+              <a href="#skills">Skills</a>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="py-4 text-xl uppercase hover:text-[#38BDAE] ease-in-out duration-200 cursor-pointer">
+              <a href="#about">About</a>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="py-4 text-xl uppercase hover:text-[#38BDAE] ease-in-out duration-200 cursor-pointer">
+              <a href="#projects">Projects</a>
+            </li>
+            <li onClick={() => setMenuOpen(false)} className="py-4 text-xl uppercase hover:text-[#38BDAE] ease-in-out duration-200 cursor-pointer">
+              <a 
+                href="/Joe-Marten-Zedric-Portugal_Resume.pdf" 
+                download="Joe-Marten-Zedric-Portugal_Resume.pdf"
+                className="text-white font-mono uppercase hover:bg-black border-2 hover:text-[#38BDAE] hover:border-[#38BDAE] hover:rounded-2xl border-white ease-in-out duration-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              >
+                Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
-export default Skills;
+export default Navbar;
