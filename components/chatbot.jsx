@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaEnvelope } from 'react-icons/fa';
+import About from "../../components/About";
+import Home from "../../components/Home";
+import Navbar from "../../components/Navbar";
+import Projects from "../../components/Projects";
+import Skills from "../../components/Skills";
 
 const ChatBot = () => {
     const [message, setMessage] = useState('');
