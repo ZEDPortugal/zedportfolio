@@ -98,7 +98,7 @@ const Home = () => {
         <div className="max-w-[600px] p-[4%]">
           {/* Hidden on desktop */}
           <img
-            className="lg:hidden border-white border-2 bg-white relative rounded-full size-24 mt-20 mb-5 "
+            className="xl:hidden border-white border-2 bg-white relative rounded-full size-24 mt-20 mb-5 "
             src="/image/profile.png"
             alt="Profile"
           />
@@ -124,7 +124,7 @@ const Home = () => {
             </div>
           </div>
           {/* Hidden on desktop */}
-          <div className="lg:hidden flex items-center mt-20 ">
+          <div className="md:hidden flex items-center mt-20 ">
             <a
               href="https://www.linkedin.com/in/joe-marten-zedric-portugal-b266ab296/"
               target="_blank"
@@ -158,7 +158,7 @@ const Home = () => {
         
         </div>
         <img
-          className="animate-pulse animate-once animate-duration-[2000ms] hidden lg:flex relative hover:border-[#38BDAE] border-2 hover:border-4 ease-in-out hover:rounded-full hover:size-80 duration-300 border-[#f1f3f4]  left-64 rounded-r- rounded-b-full size-60"
+          className="animate-pulse animate-once animate-duration-[2000ms] hidden xl:flex relative hover:border-[#38BDAE] border-2 hover:border-4 ease-in-out hover:rounded-full hover:size-80 duration-300 border-[#f1f3f4]  left-64 rounded-r- rounded-b-full size-60"
           src="/image/profile.png"
           alt="Profile"
         />
