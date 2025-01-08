@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import ChatBot from "../../components/chatbot";
 
 const Navbar = ({ isLight, handleToggle }) => {
   const [menuOpen, setMenuOpen] = useState(false);
