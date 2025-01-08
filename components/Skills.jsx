@@ -2,11 +2,11 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { FaSun, FaMoon, FaHtml5, FaCss3, FaJs, FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import ChatBot from "../../components/chatbot";
+import ChatBot from './ChatBot';
 
 const Skills = ({ isLight, handleToggle }) => {
   const { ref, inView } = useInView({
-    triggerOnce: false, // Ensure the animation only triggers once
+    triggerOnce: true, // Ensure the animation only triggers once
     threshold: 0.1, // Activate when 10% of the section is visible
   });
 
