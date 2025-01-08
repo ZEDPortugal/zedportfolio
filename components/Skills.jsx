@@ -2,7 +2,11 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { FaSun, FaMoon, FaHtml5, FaCss3, FaJs, FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import ChatBot from './ChatBot';
+import About from "../../components/About";
+import ChatBot from "../../components/chatbot";
+import Home from "../../components/Home";
+import Navbar from "../../components/Navbar";
+import Projects from "../../components/Projects";
 
 const Skills = ({ isLight, handleToggle }) => {
   const { ref, inView } = useInView({
