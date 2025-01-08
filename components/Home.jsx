@@ -8,6 +8,11 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import About from "../../components/About";
+import ChatBot from "../../components/chatbot";
+import Navbar from "../../components/Navbar";
+import Projects from "../../components/Projects";
+import Skills from "../../components/Skills";
 
 const Home = () => {
   const [loopNum, setLoopNum] = useState(0);
