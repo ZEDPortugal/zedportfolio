@@ -5,7 +5,7 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 const Skills = ({ isLight, handleToggle }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Ensure the animation only triggers once
+    triggerOnce: false, // Ensure the animation only triggers once
     threshold: 0.1, // Activate when 10% of the section is visible
   });
 
