@@ -16,7 +16,7 @@ const Projects = ({ isLight }) => {
         </h2>
         <div className="flex projects-container px-10">
           {/* PBS Project Card with Fade-in Effect */}
-          <Link href="https://pbs-web-stream-main-zedportugals-projects.vercel.app/?fbclid=IwAR3KjArKIcGsVEVhussmKVfzItY3gwdEqZ_LHrdFkEE0DbxXr4TMqm1hTd4" passHref>
+          <Link href="https://pbs-web-stream-main.vercel.app/" passHref>
             <div
               ref={ref}
               className={`project p-4 mb-4 rounded-3xl shadow-md border-2 border-white hover:border-[#38BDAE] ${
