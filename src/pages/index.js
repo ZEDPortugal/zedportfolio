@@ -5,7 +5,6 @@ import Home from "../../components/Home";
 import Skills from "../../components/Skills";
 import About from "../../components/About";
 import App from "../../components/App";
-import ChatBot from "../../components/chatbot"; // Ensure consistent casing
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
