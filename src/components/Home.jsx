@@ -8,10 +8,7 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import Skills from '../components/Skills';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import ChatBot from '../components/ChatBot';
+
 
 const Home = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -65,8 +62,8 @@ const Home = () => {
   loop
   muted
   playsInline
-  preload="auto" // Optional, for better performance
-  poster="/image/bg-fallback.jpg" // Fallback image
+  preload="auto"
+  poster="/image/bg-fallback.jpg"
 ></video>
 
       <Navbar />

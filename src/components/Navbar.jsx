@@ -1,10 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import Skills from '../components/Skills';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Home from '../components/Home';
-import ChatBot from '../components/ChatBot';
+
 
 const Navbar = ({ isLight, handleToggle }) => {
   const [menuOpen, setMenuOpen] = useState(false);

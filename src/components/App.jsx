@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Skills from '../components/Skills';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Home from '../components/Home';
-import ChatBot from '../components/ChatBot';
+
+import Skills from './src/components/Skills.jsx';
+import Navbar from './src/components/Navbar.jsx';
+import About from './src/components/About.jsx';
+import Projects from './src/components/Projects.jsx';
+import Home from './src/components/Home.jsx';
+import ChatBot from './src/components/ChatBot.jsx';
 
 const App = () => {
   const [isLight, setIsLight] = useState(false);

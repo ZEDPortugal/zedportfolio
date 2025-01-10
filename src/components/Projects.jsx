@@ -1,11 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
-import Navbar from '../components/Navbar';
-import Skills from '../components/Skills';
-import About from '../components/About';
-import Home from '../components/Home';
-import ChatBot from '../components/ChatBot';
+
 const Projects = ({ isLight }) => {
   const { ref, inView } = useInView({
     triggerOnce: false, // Trigger the animation only once when the element comes into view

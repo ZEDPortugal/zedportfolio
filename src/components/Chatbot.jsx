@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaEnvelope } from 'react-icons/fa';
-import Navbar from '../components/Navbar';
-import Skills from '../components/Skills';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Home from '../components/Home';
+
 
 
 const ChatBot = () => {
