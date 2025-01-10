@@ -1,10 +1,10 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import ChatBot from "../../components/chatbot";
-import Home from "../../components/Home";
-import Navbar from "../../components/Navbar";
-import Projects from "../../components/Projects";
-import Skills from "../../components/Skills";
+import Navbar from '../components/Navbar';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
+import Home from '../components/Home';
+import ChatBot from '../components/ChatBot';
 
 const About = ({ isLight }) => {
     const { ref, inView } = useInView({

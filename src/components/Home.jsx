@@ -8,11 +8,10 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import About from "../../components/About";
-import ChatBot from "../../components/chatbot";
-import Navbar from "../../components/Navbar";
-import Projects from "../../components/Projects";
-import Skills from "../../components/Skills";
+import Skills from '../components/Skills';
+import About from '../components/About';
+import Projects from '../components/Projects';
+import ChatBot from '../components/ChatBot';
 
 const Home = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -59,13 +58,16 @@ const Home = () => {
     <section id="home" className="relative h-screen">
       {/* Video background */}
   
-  <video
-    className="absolute top-0 left-0 w-full h-full object-cover z-[-1] filter brightness-[30%]"
-    src="/video/bg.mp4"
-    autoPlay
-    loop
-    muted
-  ></video>
+      <video
+  className="absolute top-0 left-0 w-full h-full object-cover z-[-1] filter brightness-[30%]"
+  src="/video/bg.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto" // Optional, for better performance
+  poster="/image/bg-fallback.jpg" // Fallback image
+></video>
 
       <Navbar />
 
