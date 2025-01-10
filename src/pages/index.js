@@ -5,7 +5,7 @@ import Home from "../../components/Home";
 import Skills from "../../components/Skills";
 import About from "../../components/About";
 import App from "../../components/App";
-import ChatBot from "../../components/chatbot";
+import ChatBot from "../../components/chatbot"; // Ensure consistent casing
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,11 +20,8 @@ const geistMono = Geist_Mono({
 export default function HomePage() {
   return (
     <>
- 
-    <Home />
-    <App />   
-
+      <Home />
+      <App />
     </>
-
   );
 }

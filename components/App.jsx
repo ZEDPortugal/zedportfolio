@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Skills from './Skills';
 import About from './About';
 import Projects from './Projects';
-import ChatBot from './ChatBot';
+import ChatBot from './chatbot'; // Ensure consistent casing
 
 const App = () => {
   const [isLight, setIsLight] = useState(false);
