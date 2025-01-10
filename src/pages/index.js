@@ -1,6 +1,6 @@
 
 
-import App from './src/components/App.jsx';
+import App from "./app";
 
 
 export default function HomePage() {
