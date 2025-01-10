@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+
 import {
   AiOutlineMenu,
   AiOutlineClose,
@@ -9,8 +10,13 @@ import {
 } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-
 const Home = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Front-end dev", "Web designer", "Freelancer"];
@@ -54,17 +60,24 @@ const Home = () => {
   return (
     <section id="home" className="relative h-screen">
       {/* Video background */}
-  
       <video
-  className="absolute top-0 left-0 w-full h-full object-cover z-[-1] filter brightness-[30%]"
-  src="/video/bg.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-  poster="/image/bg-fallback.jpg"
-></video>
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] filter brightness-[30%]"
+        src="/video/bg.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata" // Preload metadata only (better for performance)
+        poster="/image/bg-fallback.jpg"
+        loading="lazy" // Lazy load the video
+        onCanPlayThrough={handleVideoLoad} // Video loaded
+      ></video>
+
+      {/* Black background before the video loads */}
+      {!isVideoLoaded && (
+        <div className="absolute top-0 left-0 w-full h-full bg-[#000000] z-[-1]"></div>
+      )}
+
 
       <Navbar />
 
@@ -102,7 +115,7 @@ const Home = () => {
         <div className="max-w-[600px] p-[4%]">
           {/* Hidden on desktop */}
           <img
-            className="xl:hidden border-white border-2 bg-white relative rounded-full size-24 mt-20 mb-5 "
+            className="md:hidden border-white border-2 bg-white relative rounded-full size-24 mt-20 mb-5 "
             src="/image/profile.png"
             alt="Profile"
           />
@@ -162,7 +175,7 @@ const Home = () => {
         
         </div>
         <img
-          className="animate-pulse animate-once animate-duration-[2000ms] hidden xl:flex relative hover:border-[#38BDAE] border-2 hover:border-4 ease-in-out hover:rounded-full hover:size-80 duration-300 border-[#f1f3f4]  left-64 rounded-r- rounded-b-full size-60"
+          className="animate-pulse animate-once animate-duration-[2000ms] hidden md:flex cm:left-1 lg:left-44 xl:left-80 relative hover:border-[#38BDAE] border-2 hover:border-4 ease-in-out hover:rounded-full hover:size-64 duration-300 border-[#f1f3f4] lg: left-16 rounded-b-full size-60"
           src="/image/profile.png"
           alt="Profile"
         />

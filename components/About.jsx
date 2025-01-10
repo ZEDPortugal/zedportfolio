@@ -1,7 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-
 const About = ({ isLight }) => {
     const { ref, inView } = useInView({
         triggerOnce: false, // Ensure the animation retriggers

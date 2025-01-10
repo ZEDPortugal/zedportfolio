@@ -2,15 +2,10 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { FaSun, FaMoon, FaHtml5, FaCss3, FaJs, FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import Navbar from './src/components/Navbar.jsx';
-import About from './src/components/About.jsx';
-import Projects from './src/components/Projects.jsx';
-import Home from './src/components/Home.jsx';
-import ChatBot from './src/components/ChatBot.jsx';
 
 const Skills = ({ isLight, handleToggle }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Ensure the animation only triggers once
+    triggerOnce: false, // Ensure the animation only triggers once
     threshold: 0.1, // Activate when 10% of the section is visible
   });
 
@@ -68,7 +63,7 @@ const Skills = ({ isLight, handleToggle }) => {
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
     {
-      name: "JavaScript",
+      name: "Java Script",
       icon: <FaJs className="w-10 h-10 mx-auto" />,
       link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
@@ -116,6 +111,7 @@ const Skills = ({ isLight, handleToggle }) => {
     </a>
   ))}
 </div>
+
       </div>
     </section>
   );
